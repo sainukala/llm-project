@@ -20,9 +20,9 @@ def get_few_shot_db_chain():
 
     #Initiating DB connection
     db_user = "root"
-    db_password = "12345678"
+    db_password = "password"
     db_host = "localhost"
-    db_name = "llm_project"
+    db_name = "db_name"
     db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}")
     embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
     to_vectorize = ["".join(str(item) for item in example.values()) for example in few_shots]
